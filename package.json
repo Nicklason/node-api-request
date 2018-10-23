@@ -1,0 +1,30 @@
+{
+  "name": "@nicklason/api-request",
+  "version": "1.0.0",
+  "description": "Simple wrapper for request to handle errors when interacting with JSON APIs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicklason/node-api-request.git"
+  },
+  "author": {
+    "name": "Nicklas Marc Pedersen",
+    "url": "https://nicklas.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nicklason/node-api-request/issues"
+  },
+  "homepage": "https://github.com/Nicklason/node-api-request#readme",
+  "dependencies": {
+    "requestretry": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-google": "^0.10.0",
+    "nodemon": "^1.18.4"
+  }
+}
