@@ -1,7 +1,7 @@
 {
   "name": "@nicklason/api-request",
-  "version": "1.0.0",
-  "description": "Simple wrapper for request to handle errors when interacting with JSON APIs",
+  "version": "1.1.0",
+  "description": "Simple wrapper for request to handle errors",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./"
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Nicklason/node-api-request#readme",
   "dependencies": {
-    "requestretry": "^3.0.1"
+    "requestretry": "^3.0.2"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

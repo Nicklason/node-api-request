@@ -1,5 +1,6 @@
 const request = require('requestretry').defaults({
     json: true,
+    gzip: true,
     timeout: 5000,
     retryStrategy: retryStrategy,
     delayStrategy: delayStrategy
@@ -30,7 +31,7 @@ function errorHandler (err, response, body) {
             err = new Error(response.request.host + ' is down');
         } else if (response.statusCode !== 200) {
             err = new Error('HTTP error', response.statusCode);
-        } else if (!body || typeof body !== 'object') {
+        } else if (this.options.json === true && (!body || typeof body !== 'object')) {
             err = new Error('Invalid response');
         }
     }
