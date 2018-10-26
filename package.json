@@ -1,6 +1,6 @@
 {
   "name": "@nicklason/api-request",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple wrapper for request to handle errors",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/Nicklason/node-api-request#readme",
   "dependencies": {
+    "request": "^2.88.0",
     "requestretry": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
+    "eslint": "^5.8.0",
     "eslint-config-google": "^0.10.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.5"
   }
 }
