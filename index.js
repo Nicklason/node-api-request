@@ -65,7 +65,9 @@ function errorHandler (err, response, body) {
 }
 
 function delayStrategy (err, response, body) {
-    if (response.statusCode === 429) {
+    if (response === undefined) {
+        return 2 * 1000;
+    } else if (response.statusCode === 429) {
         return response.headers.hasOwnProperty('retry-after') ? response.headers['retry-after'] : 60 * 1000;
     } else if (response.statusCode > 499) {
         return 10 * 1000;
