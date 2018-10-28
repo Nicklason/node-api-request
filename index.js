@@ -12,6 +12,10 @@ function retryStrategy (err, response, body) {
         return errorHandler.call(this, err, response, body);
     }
 
+    if (response === undefined) {
+        return true;
+    }
+
     if (response.statusCode === 200) {
         return false;
     } else if (response.statusCode > 499 && response.statusCode < 600 && this.attempts > 1) {
