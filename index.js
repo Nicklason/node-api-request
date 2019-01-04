@@ -16,7 +16,7 @@ function retryStrategy (err, response, body) {
         return true;
     }
 
-    if (response.statusCode === 200) {
+    if (response.statusCode === 200 || response.statusCode === 400) {
         return false;
     } else if (response.statusCode > 499 && response.statusCode < 600 && this.attempts > 1) {
         return errorHandler.call(this, err, response, body);
