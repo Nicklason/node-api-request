@@ -23,7 +23,7 @@ function retryStrategy (err, response, body) {
     } else if (response.statusCode === 429 && this.attempts > 1) {
         return errorHandler.call(this, err, response, body);
     } else if (response.statusCode > 399 && response.statusCode < 500) {
-        return false;
+        return errorHandler.call(this, err, response, body);
     } else if (this.attempts > 2) {
         return errorHandler.call(this, err, response, body);
     }
