@@ -1,6 +1,6 @@
 {
   "name": "@nicklason/api-request",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Simple wrapper for request to handle errors",
   "main": "index.js",
   "scripts": {

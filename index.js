@@ -16,13 +16,15 @@ function retryStrategy (err, response, body) {
         return true;
     }
 
-    if (response.statusCode === 200 || response.statusCode === 400 || response.statusCode === 404) {
+    if (response.statusCode === 200) {
         return false;
     } else if (response.statusCode > 499 && response.statusCode < 600 && this.attempts > 1) {
         return errorHandler.call(this, err, response, body);
     } else if (response.statusCode === 429 && this.attempts > 1) {
         return errorHandler.call(this, err, response, body);
-    } else if (response.statusCode !== 200 && this.attempts > 2) {
+    } else if (response.statusCode > 399 && response.statusCode < 500) {
+        return false;
+    } else if (this.attempts > 2) {
         return errorHandler.call(this, err, response, body);
     }
 
